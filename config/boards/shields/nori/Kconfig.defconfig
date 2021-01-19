@@ -1,0 +1,6 @@
+if SHIELD_NORI
+
+config ZMK_KEYBOARD_NAME
+	default "nori-kb"
+
+endif
