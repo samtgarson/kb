@@ -1,0 +1,6 @@
+if SHIELD_SAMTGARSON
+
+config ZMK_KEYBOARD_NAME
+	default "samtgarson-kb"
+
+endif
