@@ -1,0 +1,6 @@
+modules/
+tools/
+zephyr/
+bootloader/
+zmk/
+build/
