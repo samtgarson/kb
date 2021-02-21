@@ -558,7 +558,7 @@ const coords = [
 		[1,0],  [1,1],  [1,2],  [1,3],  [1,4],  [1,5],  [1,6],  [1,7],  [1,8],  [1,9],  [1,10], [1,11], [1,12], [2,13], [1,13],
 		[2,0],  [2,1],  [2,2],  [2,3],  [2,4],  [2,5],  [2,6],  [2,7],  [2,8],  [2,9],  [2,10], [2,11], [2,12],
 		[3,0],  [3,1],  [3,2],  [3,3],  [3,4],  [3,5],  [3,6],  [3,7],  [3,8],  [3,9],  [3,10],      [3,11],    [3,13],
-		    [4,0],    [4,1],    [4,2],    [4,4],      [4,5],      [4,7],    [4,8],   [4,9],   [4,10],   [4,11], [4,12], [4,13],
+		    [4,0],    [4,1],    [4,3],    [4,4],      [4,6],      [4,7],    [4,8],   [4,9],   [4,10],   [4,11], [4,12], [4,13],
 
 ]
 
@@ -653,6 +653,24 @@ const createSvg = () => {
     return svgElem
 }
 
+let wiringBoard;
+let wiringToggle;
+let wiringToggleLabel
+const insertToggle = (sibling) => {
+    wiringToggle = document.createElement('input')
+    wiringToggle.setAttribute('type', 'checkbox')
+    wiringToggle.id = 'wiring-toggle'
+    wiringToggleLabel = document.createElement('label')
+    wiringToggleLabel.setAttribute('for', 'wiring-toggle')
+    wiringToggleLabel.textContent = 'Top'
+    const toggleWrapper = document.createElement('div')
+    toggleWrapper.className = 'wiring-toggle'
+    toggleWrapper.appendChild(wiringToggle)
+    toggleWrapper.appendChild(wiringToggleLabel)
+
+    document.body.insertBefore(toggleWrapper, sibling)
+}
+
 const generateWiring = () => {
     const wrapper = createWrapper()
     const svg = createSvg()
@@ -672,11 +690,23 @@ const generateWiring = () => {
 
     wrapper.appendChild(svg);
     insertWrapper(wrapper, "Wiring")
+    insertToggle(wrapper)
+    wiringBoard = wrapper
 }
 
 const execute = () => {
     generateKeyMap()
     generateWiring()
+
+    wiringToggle.addEventListener('change', function () {
+        if (this.checked) {
+            wiringBoard.classList.add('flipped')
+            wiringToggleLabel.textContent = 'Bottom'
+        } else {
+            wiringBoard.classList.remove('flipped')
+            wiringToggleLabel.textContent = 'Top'
+        }
+    })
 }
 
 document.addEventListener("DOMContentLoaded", execute)

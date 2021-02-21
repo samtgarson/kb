@@ -108,3 +108,22 @@ h2 {
   stroke: rgb(0, 189, 116);
   stroke-width: 1px;
 }
+
+.wiring-toggle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wiring-toggle input {
+  display: none;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+.flipped .wiring-svg line.col {
+  stroke: rgb(221, 0, 96);
+  stroke-width: 1px;
+}
+
