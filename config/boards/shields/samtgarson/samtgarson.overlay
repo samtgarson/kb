@@ -12,28 +12,28 @@
       diode-direction = "col2row";
 
       col-gpios
-          = <&gpio0 9 GPIO_ACTIVE_HIGH>  // 0.09
-          , <&gpio0 10 GPIO_ACTIVE_HIGH> // 0.10
-          , <&gpio1 11 GPIO_ACTIVE_HIGH> // 1.11
-          , <&gpio1 13 GPIO_ACTIVE_HIGH> // 1.16
-          , <&gpio1 15 GPIO_ACTIVE_HIGH> // 1.15
-          , <&gpio0 2 GPIO_ACTIVE_HIGH>  // 0.02
-          , <&gpio0 29 GPIO_ACTIVE_HIGH> // 0.29
-          , <&gpio0 31 GPIO_ACTIVE_HIGH> // 0.31
-          , <&gpio1 7 GPIO_ACTIVE_HIGH>  // 1.07
-          , <&gpio1 2 GPIO_ACTIVE_HIGH>  // 1.02
-          , <&gpio1 1 GPIO_ACTIVE_HIGH>  // 1.01
-          , <&gpio0 12 GPIO_ACTIVE_HIGH> // 0.12
-          , <&gpio1 6 GPIO_ACTIVE_HIGH>  // 1.06
-          , <&gpio1 4 GPIO_ACTIVE_HIGH>  // 1.04
+          = <&gpio0 22 GPIO_ACTIVE_HIGH>
+          , <&gpio0 24 GPIO_ACTIVE_HIGH>
+          , <&gpio1 0  GPIO_ACTIVE_HIGH>
+          , <&gpio0 11 GPIO_ACTIVE_HIGH>
+          , <&gpio1 4  GPIO_ACTIVE_HIGH>
+          , <&gpio1 6  GPIO_ACTIVE_HIGH>
+          , <&gpio1 1  GPIO_ACTIVE_HIGH>
+          , <&gpio1 2  GPIO_ACTIVE_HIGH>
+          , <&gpio1 7  GPIO_ACTIVE_HIGH>
+          , <&gpio0 12 GPIO_ACTIVE_HIGH>
+          , <&gpio0 26 GPIO_ACTIVE_HIGH>
+          , <&gpio0 9  GPIO_ACTIVE_HIGH>
+          , <&gpio0 10 GPIO_ACTIVE_HIGH>
+          , <&gpio1 11 GPIO_ACTIVE_HIGH>
           ;
 
       row-gpios
-          = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // 0.22
-          , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // 0.24
-          , <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 1.00
-          , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // 0.11
-          , <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 1.04
+          = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+          , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+          , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+          , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+          , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
           ;
   };
 
