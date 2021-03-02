@@ -4,6 +4,22 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_prev_track {
+            timeout-ms = <500>;
+            key-positions = <42 64>;
+            bindings = <&kp C_PREV>;
+            layers = <1>;
+        };
+        combo_next_track {
+            timeout-ms = <500>;
+            key-positions = <42 66>;
+            bindings = <&kp C_NEXT>;
+            layers = <1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
