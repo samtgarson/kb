@@ -47,9 +47,9 @@ jobs:
         with:
           name: firmware
           path: samtgarson_nice_nano.uf2
-      # - name: Debug Archive
-      #   uses: actions/upload-artifact@v2
-      #   if: ${{ always() }}
-      #   with:
-      #     name: dts
-      #     path: build/zephyr/nice_nano.dts.pre.tmp
+      - name: Debug Archive
+        uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
+        with:
+          name: dts
+          path: build/zephyr/nice_nano.dts.pre.tmp
