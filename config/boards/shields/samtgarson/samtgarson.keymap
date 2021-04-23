@@ -37,7 +37,7 @@
             &mo 1      &kp LCTRL    &kp LALT    &kp LCMD       &kp SPACE      &kp RCMD     &kp RALT    &kp RCTRL    &mo 1      &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp DOWN UP>;
         };
 
         fn {
