@@ -33,21 +33,6 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (samtgarson)
-        run: west build -s zmk/app -b nice_nano -- -DSHIELD=samtgarson -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: samtgarson DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/nice_nano.dts.pre.tmp
-      - name: samtgarson Kconfig file
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 samtgarson_nice_nano.uf2
-      - name: Archive (samtgarson)
-        uses: actions/upload-artifact@v2
-        with:
-          name: samtgarson
-          path: samtgarson_nice_nano.uf2
-
       - name: West Build (NIBBLE)
         run: west build -s zmk/app -b nice_nano -- -DSHIELD=nibble -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: NIBBLE DTS File
@@ -60,13 +45,5 @@ jobs:
       - name: Archive (NIBBLE)
         uses: actions/upload-artifact@v2
         with:
-          name: nibble
+          name: firmware
           path: nibble_nice_nano.uf2
-
-
-      - name: Debug Archive
-        uses: actions/upload-artifact@v2
-        if: ${{ failure() }}
-        with:
-          name: dts
-          path: build/zephyr/nice_nano.dts.pre.tmp

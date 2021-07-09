@@ -1,2 +1,0 @@
-config SHIELD_SAMTGARSON
-    def_bool $(shields_list_contains,samtgarson)
