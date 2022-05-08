@@ -1,6 +1,6 @@
-modules/
-tools/
-zephyr/
-bootloader/
-zmk/
-build/
+nibble/modules/
+nibble/tools/
+nibble/zephyr/
+nibble/bootloader/
+nibble/zmk/
+nibble/build/

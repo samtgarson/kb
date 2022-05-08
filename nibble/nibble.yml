@@ -9,9 +9,6 @@ jobs:
     container:
       image: zmkfirmware/zmk-build-arm:2.4
     name: Build
-    defaults:
-      run:
-        working-directory: nibble
     steps:
       - name: Checkout
         uses: actions/checkout@v2
